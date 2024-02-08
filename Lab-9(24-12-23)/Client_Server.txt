@@ -1,0 +1,45 @@
+
+import java.io.*;
+import java.net.*;
+
+public class MyClient {
+
+    public static void main(String[] args) {
+        try {
+            System.out.println("Client started");
+            Socket s = new Socket("localhost", 6666);
+            System.out.println("Client Connected");
+            DataOutputStream dout = new DataOutputStream(s.getOutputStream());
+            dout.writeUTF("Hello Server");
+            dout.flush();
+            dout.close();
+            s.close();
+        } catch (IOException e) 
+        {
+            System.out.print(e);
+        }
+    }
+}
+
+
+
+import java.io.*;
+import java.net.*;
+
+public class MyServer {
+
+    public static void main(String[] args) {
+         System.out.println("Server started");
+        try {
+             try (ServerSocket ss = new ServerSocket(6666)) {
+                 Socket s = ss.accept();//establishes connection
+                 System.out.println("Client Connected");
+                 DataInputStream dis = new DataInputStream(s.getInputStream());
+                 String str = (String) dis.readUTF();
+                 System.out.println("message= " + str);
+             } //establishes connection
+        } catch (IOException e) {
+            System.out.println(e);
+        }
+    }
+}

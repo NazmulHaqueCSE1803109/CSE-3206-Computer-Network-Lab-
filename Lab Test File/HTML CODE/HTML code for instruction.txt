@@ -1,0 +1,191 @@
+<htmal>
+
+<head>
+<title>
+Subnetting Practice..................
+</title>
+<style>
+table, th, td {
+  border: 1px solid black;
+  border-collapse: collapse;
+  height: 50px;
+
+}
+
+th{
+  padding: 15px;
+  text-align: center;
+  background-color: #f1f1c1;
+  height: 50px;
+}
+td{
+  padding: 15px;
+  text-align: center;
+  height: 50 px;
+}
+</style>
+</head>
+
+<body>
+<b><h1>Subnetting Practice..................</h1> <br>
+
+<b> Addressing Table </b> <br> <br>
+
+<table style = "width:80%">
+<tr>
+<th > Device </th> <th> Interface </th> <th> IP Address </th> <th> Subnet Mask </th> <th> Default Gateway</th> 
+</tr>
+<tr>
+<td rowspan = "2"> Router 0 </td> <td> G0/0 </td> <td>  </td>  <td> </td> <td> NA</td> 
+</tr>
+<tr>
+<td> S0/0/0 </td> <td>  </td>  <td> </td> <td> NA</td> 
+</tr>
+<tr>
+<td rowspan = "3"> Router 1 </td> <td> G0/0 </td> <td>  </td>  <td> </td> <td> NA</td> 
+</tr>
+<tr>
+<td> S0/0/0 </td> <td>  </td>  <td> </td> <td> NA</td> 
+</tr>
+<tr>
+<td> S0/0/1 </td> <td>  </td>  <td> </td> <td> NA</td> 
+</tr>
+<tr>
+<td rowspan = "3"> Router 2 </td> <td> G0/0 </td> <td>  </td>  <td> </td> <td> NA</td> 
+</tr>
+<tr>
+<td> S0/0/0 </td> <td>  </td>  <td> </td> <td> NA</td> 
+</tr>
+<tr>
+<td> S0/0/1 </td> <td>  </td>  <td> </td> <td> NA</td> 
+</tr>
+<tr>
+<td rowspan = "2"> Router 3 </td> <td> G0/0 </td> <td>  </td>  <td> </td> <td> NA</td> 
+</tr>
+<tr>
+<td> S0/0/0 </td> <td>  </td>  <td> </td> <td> NA</td> 
+</tr>
+<tr>
+<td> Switch 0 </td> <td> Vlan 1</td> <td>  </td>  <td> </td> <td> </td> 
+</tr>
+<tr>
+<td> Switch 1 </td> <td> Vlan 1</td> <td>  </td>  <td> </td> <td> </td> 
+</tr>
+<tr>
+<td> Switch 2 </td> <td> Vlan 1</td> <td>  </td>  <td> </td> <td> </td> 
+</tr>
+<tr>
+<td> Switch 3 </td> <td> Vlan 1</td> <td>  </td>  <td> </td> <td> </td> 
+</tr>
+<tr>
+<td> PC 0 </td> <td> NIC</td> <td>  </td>  <td> </td> <td> </td> 
+</tr>
+<tr>
+<td> PC 1 </td> <td> NIC</td> <td>  </td>  <td> </td> <td> </td> 
+</tr>
+<tr>
+<td> PC 2 </td> <td> NIC</td> <td>  </td>  <td> </td> <td> </td> 
+</tr>
+<tr>
+<td> PC 3 </td> <td> NIC</td> <td>  </td>  <td> </td> <td> </td> 
+</tr>
+</table> <br> <br>
+
+
+<h3>Objectives: <br> <br>
+Part 1: Design an IP Addressing Scheme<br> <br>
+Part 2: Assign IP Addresses to Network Devices and Verify Connectivity<br> <br></h3>
+Scenario  </b> <br> <br>
+In this activity, you are given the network address of 172.31.1.0 /24 to subnet and provide the IP addressing for the network shown in the Topology. The required host addresses for each WAN and LAN link are labeled in the topology. <br> <br>
+
+<b> <h3> Part 1:     Design an IP Addressing Scheme </h3>  <br>
+Step 1:     Subnet the 172.31.1.0/24 network based on the maximum number of hosts required by the largest subnet. </b> <br>  <br>
+a.     Based on the topology, how many subnets are needed? <br><br>
+b.    How many bits must be borrowed to support the number of subnets in the topology table? <br><br>
+c.     How many subnets does this create? <br><br>
+d.    How many usable host addresses does this create per subnet? <br><br>
+<b>Note: </b>If your answer is less than the 14 maximum hosts required for the R3 LAN, then you borrowed too many bits. <br><br>
+e.     Calculate the binary value for the first five subnets. Subnet zero is already shown. <br>
+
+	<ol> 
+
+	<li>Net 0: 172 . 31 . 1 . 0 0 0 0 0 0 0 0 </li>
+ 
+	<li>Net 1: 172 . 31 . 1 . ___ ___ ___ ___ ___ ___ ___ ___ </li>
+ 
+	<li>Net 2: 172 . 31 . 1 . ___ ___ ___ ___ ___ ___ ___ ___ </li>
+ 
+	<li>Net 3: 172 . 31 . 1 . ___ ___ ___ ___ ___ ___ ___ ___ </li>
+ 
+	<li>Net 4: 172 . 31 . 1 . ___ ___ ___ ___ ___ ___ ___ ___ </li>
+	</ol>
+
+f.     Calculate the binary and decimal value of the new subnet mask. <br>
+	
+ 	<ul>
+	<li>11111111.11111111.11111111. ___ ___ ___ ___ ___ ___ ___ ___  </li>
+	<li>255 . 255 . 255 . ______ </li>
+	</ul>
+ 
+g.    Complete the Subnet Table, listing all available subnets, the first and last usable host address, and the broadcast address. The first subnet is done for you. Repeat until all addresses are listed. <br>
+
+<br><b>Note: </b>You may not need to use all rows. <br> <br>
+
+<b>Subnet Table </b> <br> <br>
+<table style = "width:80%">
+<tr>
+<th> Subnet Number </th> <th> Subnet IP </th> <th> First Useable IP </th> <th> Last Useable IP </th> <th> Broadcast IP </td> <th> Subnet Mask </th>
+</tr>
+<tr>
+<td> 1 </td>  <td> 130.10.0.0 </td> <td> 130.10.0.1 </td> <td> 130.10.1.254 </td> <td> 130.10.1.255 </td> <td> 255.255.254.0 </td>
+</tr>
+<tr>
+<td> 2 </td>  <td>  </td> <td>  </td> <td> </td> <td> </td><td> </td>
+</tr>
+<tr>
+<td> 3 </td>  <td>  </td> <td>  </td> <td> </td> <td> </td><td> </td>
+</tr>
+<tr>
+<td> 4 </td>  <td>  </td> <td>  </td> <td> </td> <td> </td><td> </td>
+</tr>
+</table> <br> <br>
+
+<b>Step 2:     Assign the subnets to the network shown in the topology. </b> <br> <br>
+When assigning the subnets, keep in mind that routing is necessary to allow information to be sent throughout the network. <br> <br>
+a.  Assign Subnet 0 to the R1 LAN: <br><br>
+b.  Assign Subnet 1 to the R2 LAN: <br><br>
+c.  Assign Subnet 2 to the R3 LAN: <br><br>
+d.  Assign Subnet 3 to the R4 LAN: <br><br>
+e.  Assign Subnet 4 to the link between <br><br>
+f.  Assign Subnet 5 to the link between <br><br>
+g.  Assign Subnet 6 to the link between <br> <br>
+
+<b>Step 3:     Document the addressing scheme. </b> <br> <br>
+Complete the Addressing Table using the following guidelines: <br><br>
+a.     Assign the first usable IP addresses to routers for each of the LAN links. <br><br>
+b.    Use the following method to assign WAN link IP addresses: <br>
+<ul>
+<li>For the WAN link between R1 and R2, assign the first usable IP address to R1 and last usable IP address R2. </li>
+<li> For the WAN link between R2 and R3, assign the first usable IP address to R2 and last usable IP address R3. </li>
+<li>For the WAN link between R3 and R4, assign the first usable IP address to R3 and last usable IP address R4.</li> </ul> 
+c.  Assign the second usable IP addresses to the switches. <br><br>
+d.  Assign the last usable IP addresses to the hosts. <br> <br>
+
+<b> <h3> Part 2:     Assign IP Addresses to Network Devices and Verify Connectivity </b> </h3> <br>
+Most of the IP addressing is already configured on this network. Implement the following steps to complete the addressing configuration. <br> <br>
+
+<b>Step 1:     Configure IP addressing on R1 and R2 LAN interfaces. <br> <br>
+Step 2:     Configure IP addressing on S3, including the default gateway. <br><br>
+Step 3:     Configure IP addressing on PC4, including the default gateway. <br><br>
+Step 4:     Verify connectivity.  <br> <br> </b>
+You can only verify connectivity from R1, R2, S3, and PC4. However, you should be able to ping every IP address listed in the Addressing Table. <br> <br> <br><br>
+
+Developed By, <br>
+Md. Zahirul Islam<br>
+Lecturer<br>
+Department of Computer Science & Engineering <br>
+Rajshahi University of Engineering & Technology <br> 
+Rajshahi - 6204 <br><br><br><br><br>
+
+</body>
+</htmal>
